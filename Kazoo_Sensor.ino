@@ -22,9 +22,12 @@ void loop() {
 
   
   int piezoPitch =  // Output value that controls the piezo.
-  map(kazooBend,0,1023,4000,0); //maps the sensor values to the frequency range of the arduino
-  tone(9,piezoPitch,20);
-  delay(10);
+  map(kazooBend,0,1023,255,0); //maps the sensor values to the output range
+  analogWrite(9,PiezoPitch);
+  
+ 
+ // tone(9,piezoPitch,20);
+ // delay(10);
 
   
   Serial.print(" Piezo: "); //Prints the word "Piezo" and a colon
